@@ -1,3 +1,19 @@
 # Ignore build directories
 /build/
 CMakeLists.txt 
+
+# third-party libraries
+/third_party/
+
+# include directories
+/include/glad/
+/include/KHR/
+/include/GLFW/
+
+#lib
+/lib/libglfw3.a
+/lib/libglfw3dll.a
+
+/src/glad.c
+
+/.vscode/
