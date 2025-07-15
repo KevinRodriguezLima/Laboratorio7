@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <opencv2/opencv.hpp>
-#include "ImageLoader.hpp"  // Para usar MaskSlice
+#include "ImageLoader.hpp" 
 
 // Devuelve una nube de puntos (coordenadas 3D) a partir de las máscaras
 std::vector<cv::Point3f> crearNubeDePuntos(

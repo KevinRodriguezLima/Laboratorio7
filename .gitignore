@@ -9,6 +9,7 @@ CMakeLists.txt
 /include/glad/
 /include/KHR/
 /include/GLFW/
+/include/GL/
 
 #lib
 /lib/libglfw3.a
