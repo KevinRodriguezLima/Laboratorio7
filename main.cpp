@@ -1,4 +1,4 @@
-
+//*
 #include "ImageLoader.hpp"
 #include "PointCloudGenerator.hpp"
 #include "Delaunay3D.hpp"
@@ -38,4 +38,4 @@ int main() {
 
     return 0;
 }
-
+//*/

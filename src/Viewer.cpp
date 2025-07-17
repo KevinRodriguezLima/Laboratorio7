@@ -29,9 +29,9 @@ void drawMesh() {
     glColor3f(0.7f, 0.4f, 0.9f);
     glBegin(GL_TRIANGLES);
     for (const auto& tri : meshGlobal.obtenerTriangulos()) {
-        glVertex3f(tri.v1.x, tri.v1.y, tri.v1.z);
-        glVertex3f(tri.v2.x, tri.v2.y, tri.v2.z);
-        glVertex3f(tri.v3.x, tri.v3.y, tri.v3.z);
+        glVertex3f(tri.a.x, tri.a.y, tri.a.z);
+        glVertex3f(tri.b.x, tri.b.y, tri.b.z);
+        glVertex3f(tri.c.x, tri.c.y, tri.c.z);
     }
     glEnd();
 }
@@ -171,9 +171,9 @@ void Viewer::visualizar(const Mesh& mesh) {
     // Extraer los vértices de todos los triángulos
     std::vector<cv::Point3f> puntos;
     for (const auto& tri : mesh.obtenerTriangulos()) {
-        puntos.push_back(tri.v1);
-        puntos.push_back(tri.v2);
-        puntos.push_back(tri.v3);
+        puntos.push_back(tri.a);
+        puntos.push_back(tri.b);
+        puntos.push_back(tri.c);
     }
 
     // Centrar y escalar
@@ -186,12 +186,11 @@ void Viewer::visualizar(const Mesh& mesh) {
         Triangle t{ puntos[i], puntos[i + 1], puntos[i + 2] };
         triangulosEscalados.push_back(t);
     }
-    meshGlobal.setTriangulos(triangulosEscalados); // Necesitas agregar esta función a Mesh
+    meshGlobal.setTriangulos(triangulosEscalados); // Asegúrate de tener esta función en Mesh
 
     inicializarGL("Malla 3D - Reconstrucción de Rana");
     glutMainLoop();
 }
-
 
 void Viewer::visualizarPuntos(const std::vector<cv::Point3f>& puntos) {
     modo = PUNTOS;
